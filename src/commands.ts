@@ -12,6 +12,7 @@ export const CreateComponent = async (uri: vscode.Uri) => {
   });
 
   if (componentName != undefined) {
+    let lowerCaseComponent = componentName.toLowerCase();
     const titleCaseComponent = toPascalCase(componentName);
     let formattedTitleCaseComponent = titleCaseComponent.replace(re, '');
     if (!fs.existsSync(`${newPath}/${formattedTitleCaseComponent}`)) {
